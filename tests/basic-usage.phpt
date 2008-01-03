@@ -47,7 +47,7 @@ for ($i = 0; $i < $_Domain51_MicroBench_total; ++$i) {
      */
 }
 $_Domain51_MicroBench_end = microtime(true);
-
+ob_end_clean();
 
 printf(
     "took %s seconds to execute code %s times (%s reqs/second)\n",
