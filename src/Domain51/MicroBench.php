@@ -29,6 +29,12 @@ class Domain51_MicroBench
         }
     }
 
+    /**
+     * @todo add support for save($to_file)
+     * @todo refactor out code template so it can be swapped
+     * @todo refactor generation of code into an object with __toString() so other devs
+     *       can utilize the generated code without having to save it to file
+     */
     public function save() 
     {
         $output_file = dirname($this->_file) . '/' . basename($this->_file, '.php') . '-bench.php';
