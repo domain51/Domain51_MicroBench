@@ -3,7 +3,10 @@
 class Domain51_MicroBench
 {
     private $_file = null;
-    private $_sections = array();
+    private $_sections = array(
+        'setup' => '',
+        'test' => ''
+    );
 
     public function loadFromFile($file) 
     {
@@ -55,7 +58,9 @@ class Domain51_MicroBench
  */
 
 $_Domain51_MicroBench_total = isset($argv[1]) && (int)$argv[1] == $argv[1] ? (int)$argv[1] : 1000;
-ob_start();
+if ($_Domain51_MicroBench_total > 1) {
+    ob_start();
+}
 
 $_Domain51_MicroBench_start = microtime(true);
 for ($i = 0; $i < $_Domain51_MicroBench_total; ++$i) {
@@ -70,7 +75,9 @@ for ($i = 0; $i < $_Domain51_MicroBench_total; ++$i) {
      */
 }
 $_Domain51_MicroBench_end = microtime(true);
-ob_end_clean();
+if ($_Domain51_MicroBench_total > 1) {
+    ob_end_clean();
+}
 
 printf(
     "took %s seconds to execute code %s times (%s reqs/second)\n",

@@ -2,7 +2,7 @@
 <project name="Domain51_MicroBench" basedir="." default="make">
     <taskdef classname="phing.tasks.ext.d51PearPkg2Task" name="d51pearpkg2" />
     
-    <property name="version" value="0.1" />
+    <property name="version" value="0.2" />
     <property name="package_name" value="Domain51_MicroBench" />
     
     <target name="clean">
@@ -61,6 +61,14 @@
                 <install as="d51_microbench" name="scripts/d51_microbench.php" />
             </release>
             
+            <changelog version="0.2" date="2008-02-23">
+                The following changes:
+
+                * allows benchmark sources without an explicit
+                  setup section
+                * outputs results when only 1 loop is performed
+            </changelog>
+
             <changelog version="0.1" date="2008-01-03">
                 This is the initial devel release of this package
             </changelog>
